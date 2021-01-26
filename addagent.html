@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- Data table options: https://datatables.net/reference/option/pageLength -->
+<html>
+    <head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/mdb.min.css">
+        <link rel="stylesheet" href="css/addons/datatables.min.css" >
+        <script type="text/javascript" src="moment.min.js"></script>
+        
+
+        <title>ATM Intranet - addagent</title>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+     
+        <script>
+            // Web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "",
+                authDomain: "",
+                databaseURL: "",
+                projectId: "",
+                storageBucket: "",
+                messagingSenderId: "",
+                appId: ""
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);             
+		    // const db = firebase.firestore();
+        </script>
+     
+    </head>
+    <body>         
+        <div class="wrapper">
+            <div class="top-bar">
+                <div class="logo">
+                    <img src="logo.jpg">
+                </div>
+                <div class="menu-bar">
+                    <ul>
+                        <li class="active"><a href="addagent.html">add agent</a></li class="active">
+                        <li><a href="report.html">report</a></li>
+                        <li><a href="admin.html">admin</a></li>
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <div class="input-search">
+                        <button onclick="logout()">logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="submenu">
+                <div class="report_title">
+                    <h2>Add New Device</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="main2-div">
+                <input type="text" placeholder="Device Number" id="deviceno_field" maxlength="4" / onkeypress='validate(event)'/>
+                <input type="text" placeholder="Paycom ID" id="eid_field" minlength="4" maxlength="4" / onkeypress='validate(event)'/>
+                <input type="text" placeholder="First Name" id="fname_field" onkeypress='validate1(event)'/>
+                <input type="text" placeholder="Last Name" id="lname_field" onkeypress='validate1(event)' />
+                <button onclick="save_user()">Add this employee</button>
+            </div>
+            <div class="main2-div">
+                <input  type="file" id="csvFileInput" onchange="updateCsvFile(this.files)" accept=".csv" />
+                <button onclick="printAll()">All QR codes</button>
+            </div>
+
+            <div>
+                <div class="report_result">
+                    <table class="customers table hover" id="tbl_devicelog_list">
+                        <thead>
+                            <tr>
+                                <th >Device ID</th>
+                                <th >Paycom ID</th>
+                                <th >First Name</th>
+                                <th >Last Name</th>
+                                <th >Unique Key</th>
+                                <th >Function</th>
+                            </tr> 
+                        </thead>
+                        <tbody id="table_body">
+                            
+                        </tbody>
+                    </table>
+                   
+                </div>
+            </div>
+        </div>   
+
+    
+        <script src="addagent.js"></script>
+
+        <!-- Pagination -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+
+       
+    </body>  
+</html>
+
