@@ -61,12 +61,9 @@ function adminLog(el) {
     // reload_page();
 }    
             
-            
-    
 
 
-
-// mia 3/13/2020
+// Print QR code
 function printQR(el) {
     img = el.id
     tr=el.closest("#row"); //get Row value
@@ -98,7 +95,7 @@ function ImagetoPrint(img,devNum,eeId,Fname,Lname){
 }
 
 
-// mia 3/11/2020
+// Print QR codes of all agents
 function printAll() {
     table = document.getElementsByTagName("tbody")[0].rows;
     img=[]
@@ -145,7 +142,7 @@ function ImagetoPrint2(img,devNum,eeId,Fname,Lname){
 }
 
 
-// mia 4 edit
+// Save user information manually
 function save_user() {
     devnum = document.getElementById('deviceno_field').value;
     eeID = document.getElementById('eid_field').value;
@@ -224,7 +221,7 @@ function save_user() {
 }
     
 
-// mia code 1
+// Save users by uploading excel file
 function save_user1() {
     var device_number = field1
     var eid = field2
@@ -293,7 +290,7 @@ function update_user() {
 }
 
 function delete_user(el) {
-    tr = el.closest("#row"); //get Row value
+    tr = el.closest("#row"); // Get row value
     td = tr.getElementsByTagName("td");
     userId = td[4].innerHTML
 
@@ -313,9 +310,10 @@ function reload_page() {
     window.location.reload();
 }
 
-// Add users by csv file
+
+// -----------Add users by csv file-----------
 function updateCsvFile(files) {
-    // Check for the various File API support.
+    // Check for the various File API support
     
     if (window.FileReader) {
         // FileReader are supported.
@@ -361,6 +359,8 @@ function processData(csv) {
     alert("Please reload the page to update the table.");
     adminLog('Upload CSV file');
 }
+// -----------Add users by csv file end-----------
+
 
 function checking(data, indexRow) {
     firebase.database().ref("users/").orderByChild("devicenumber").equalTo(data[0]).once("value").then(function(snapshot) {
@@ -390,11 +390,9 @@ if(evt.target.error.name == "NotReadableError") {
     }
 }
 
-// mia code 4 (number only)
-
+// Number validation
 function validate(evt) {
     var theEvent = evt || window.event;
-  
     // Handle paste
     if (theEvent.type === 'paste') {
         key = event.clipboardData.getData('text/plain');
@@ -410,9 +408,9 @@ function validate(evt) {
     }
   }
 
+// Letter validation 
 function validate1(evt) {
     var theEvent = evt || window.event;
-  
     // Handle paste
     if (theEvent.type === 'paste') {
         key = event.clipboardData.getData('text/plain');

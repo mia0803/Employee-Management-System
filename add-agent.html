@@ -2,7 +2,7 @@
 <!-- Data table options: https://datatables.net/reference/option/pageLength -->
 <html>
     <head>
-        
+        <!-- Pagination -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -11,7 +11,7 @@
         <script type="text/javascript" src="moment.min.js"></script>
         
 
-        <title>ATM Intranet - addagent</title>
+        <title>Company Intranet - addagent</title>
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
@@ -64,6 +64,7 @@
                     <p></p>
                 </div>
             </div>
+            <!-- Add agent manually -->
             <div class="main2-div">
                 <input type="text" placeholder="Device Number" id="deviceno_field" maxlength="4" / onkeypress='validate(event)'/>
                 <input type="text" placeholder="Paycom ID" id="eid_field" minlength="4" maxlength="4" / onkeypress='validate(event)'/>
@@ -71,6 +72,7 @@
                 <input type="text" placeholder="Last Name" id="lname_field" onkeypress='validate1(event)' />
                 <button onclick="save_user()">Add this employee</button>
             </div>
+            <!-- Add agent by uploading file-->
             <div class="main2-div">
                 <input  type="file" id="csvFileInput" onchange="updateCsvFile(this.files)" accept=".csv" />
                 <button onclick="printAll()">All QR codes</button>

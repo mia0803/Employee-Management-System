@@ -3,8 +3,6 @@ var usersdatabaseRef = firebase.database().ref('users/');
 var table_data='';
 
 // --------------------------Display Data From DB--------------------------------
-
-
 clockdatabaseRef.once('value', function(snapshot) {
     usersdatabaseRef.on("value",gotData,errData)
     function gotData(data) {
@@ -63,9 +61,7 @@ clockdatabaseRef.once('value', function(snapshot) {
         console.log(error.message, error.code)    
     }
 });
-
-
-// --------------------------Display Data From DB--------------------------------
+// --------------------------Display Data From DB End--------------------------------
 
 
 function select(el) {
