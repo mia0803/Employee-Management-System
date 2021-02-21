@@ -3,9 +3,9 @@
 * Period: Jan.2020 - Apr.2020
 * Purpose: Company database construction and employee management system development
 * Number of developers: 3
-* Requirements: Android app development, website development, DB Setup
-* Assigned tasks: DB connection, data extraction, data transformation, data loading, use of DML, pagination, listing, print, search-box, admin dashboard, validity check, duplication check, file upload
-* Outcomes: Cost reduction in outsourcing, increased efficiency in employee management
+* Requirements: Android app development, Website development, DB Setup
+* Assigned tasks: DB connection, Data extraction, Data transformation, Data loading, Use of DML, Pagination, Listing, Print, Search-box, Admin dashboard, Validity check, Duplication check, File upload
+* Outcomes: Cost reduction in outsourcing, Increased efficiency in employee management
 
 
 
